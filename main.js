@@ -246,4 +246,18 @@ const pets = [
 
   let domString = ''
 
-  for (pet of pets)
+  for (pet of pets) {
+    `<div class="card border-success mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success">${pets.name}</div>
+  <div class="card-body text-success">
+  <img src="${pets.imageUrl}" class="card-img-top" alt="${pets.id}">
+    <h5 class="card-title">${pets.color}</h5>
+    <p class="card-text">${pets.specialSkill}</p>
+  </div>
+  <div class="card-footer bg-transparent border-success">${pets.type}</div>
+</div>`
+  };
+
+  app.innerHTML = domString;
+
+  
