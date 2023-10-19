@@ -260,4 +260,31 @@ const pets = [
 
   app.innerHTML = domString;
 
-  
+
+  // Now let's make our cats button work!
+// Select our HTML button
+const catsButton = document.querySelector("#cats")
+
+// Create our function to filter out our vegan pies
+const filter = () => {
+    // Create an empty array to hold our vegan pie objects
+    // Just like we created our empty string to hold our cards!
+    let catsArray = []
+
+    // Loop over that pie arrray
+    for (pet of pets) {
+        // Check to see if the pie is vegan
+        if(pets.type === 'cat'){
+            // If it is push it into our pie array
+            catsArray.push(pets)
+        }
+    }
+
+    // Now we can use our handy dandy function to render our new vegan pie aray to our page!
+    renderToDom(catsArray)
+}
+
+// Add an event listener to our button
+// This will listen for us to click our button
+// On click it will invoke our filter function
+catsButton.addEventListener('click', filter)
