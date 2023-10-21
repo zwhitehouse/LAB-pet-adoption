@@ -1,4 +1,13 @@
-.btn {
+#app {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.btn{
+  
+}
+
+#addPet {
+  margin-bottom: 75px;;
 }

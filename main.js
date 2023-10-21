@@ -257,12 +257,24 @@ const pets = [
       <p class="card-text">${object.color}</p>
       <h5 href="#" class="card-link">${object.specialSkill}</h5>
       <footer  href="#" class="card-link">${object.type}</footer>
+      <button class='btn btn-danger' id='delete--${object.id}'>Delete</button>
+  
     </div>
   </div>`
   }
   const app = document.querySelector('#app');
   app.innerHTML = domString
 }
+
+const app = document.querySelector('#app')
+
+const deletePet = (event) => {
+  if (event.target.id.includes('delete')) {
+    
+  }
+}
+
+app.addEventListener('click', deletePet)
 
 renderToDom(pets)
 
@@ -296,8 +308,6 @@ catsButton.addEventListener('click', filter)
 
 
 
-
-
 const dogsButton = document.querySelector('#dogs');
 
 const dogsFunc = () => {
@@ -311,8 +321,6 @@ const dogsFunc = () => {
 };
 
 dogsButton.addEventListener('click', dogsFunc);
-
-
 
 
 
@@ -330,3 +338,50 @@ const dinosFunc = () => {
 };
 
 dinosButton.addEventListener('click', dinosFunc);
+
+
+
+
+
+// const form = document.querySelector('#form')
+
+// const createPet = (event) => {
+//   event.preventDefault();
+
+//   const newPetObject = {
+//     id: pets.length + 1,
+//     name: document.querySelector('#petName').value,
+//     color: document.querySelector('#petColor').value,
+//     specialSkill: document.querySelector('#specialSkill').value,
+//     type: document.querySelector('#petType').value,
+//     imageUrl: document.querySelector('#petImage').value,
+//   }
+
+//   pets.unshift(newPetObject);
+//   renderToDom(pets);
+//   form.reset();
+// };
+
+// form.addEventListener('submit', createPet);
+
+const form = document.querySelector('form');
+
+const createPet = (e) => {
+  e.preventDefault();
+
+  const newPetObject = {
+    id: pets.length +1,
+    name: document.querySelector("#name").value,
+    color: document.querySelector("#color").value,
+    specialSkill: document.querySelector("#special-skill").value,
+    type: document.querySelector("#type").value,
+    imageUrl: document.querySelector("#image").value,
+
+  };
+
+  pets.unshift(newPetObject);
+  renderToDom(pets);
+  form.reset();
+};
+
+form.addEventListener('submit',createPet);
