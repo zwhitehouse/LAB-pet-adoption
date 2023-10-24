@@ -249,7 +249,9 @@ const pets = [
     // Loop over the array and create our pie cards
     for(let object of array){
   
-    domString += `<div class="card" style="width: 18rem;">
+    domString += `
+
+    <div class="card" style="width: 18rem;">
     <div class="card-body">
     <h6 class="card-subtitle mb-2 text-body-secondary">${object.name}</h6>
     <img src=${object.imageUrl} alt="Italian Trulli" width="200" height="250" style="display:block; margin-left:auto; margin-right:auto;">
@@ -257,8 +259,9 @@ const pets = [
       <p class="card-text">${object.color}</p>
       <h5 href="#" class="card-link">${object.specialSkill}</h5>
       <footer  href="#" class="card-link">${object.type}</footer>
+    <div class='container'>
       <button class='btn btn-danger' id='delete--${object.id}'>Delete</button>
-  
+    </div>
     </div>
   </div>`
   }
@@ -342,7 +345,19 @@ const dinosFunc = () => {
 dinosButton.addEventListener('click', dinosFunc);
 
 
+const allButton = document.querySelector('#cat', '#dog', '#dino')
 
+const allFunc = () => {
+  let allButtonArr = [];
+
+  for (let pet of pets) {
+    if (pet.type == 'cat' || pet.type == 'dog' || pet.type == 'dino')
+    allButtonArr.push(pet)
+  }
+  renderToDom(allButtonArr)
+}
+
+allButton.addEventListener('click', allFunc);
 
 
 // const form = document.querySelector('#form')
