@@ -2,9 +2,42 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #addPet {
   margin-bottom: 75px;;
 }
 
+.card {
+  background-color:aqua ;
+  border: 5px solid black;
+  margin-bottom: 25px;
+}
+
+.card-subtitle {
+  text-align: center;
+}
+
+.card-title {
+  color: white;
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-link {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
