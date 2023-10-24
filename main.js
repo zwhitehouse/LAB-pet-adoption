@@ -262,7 +262,6 @@ const pets = [
     </div>
   </div>`
   }
-  const app = document.querySelector('#app');
   app.innerHTML = domString
 }
 
@@ -270,7 +269,10 @@ const app = document.querySelector('#app')
 
 const deletePet = (event) => {
   if (event.target.id.includes('delete')) {
-    
+    const [,id] = event.target.id.split('--')
+    const index = pets.findIndex (obj => obj.id === Number(id));
+    pets.splice(index,1)
+    renderToDom(pets);
   }
 }
 
