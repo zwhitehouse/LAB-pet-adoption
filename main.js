@@ -345,7 +345,7 @@ const dinosFunc = () => {
 dinosButton.addEventListener('click', dinosFunc);
 
 
-const allButton = document.querySelector('#cat', '#dog', '#dino')
+const allButton = document.querySelector('#all')
 
 const allFunc = () => {
   let allButtonArr = [];
